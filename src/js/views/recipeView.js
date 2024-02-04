@@ -1,8 +1,6 @@
 import View from './view.js';
 import icons from 'url:../../img/icons.svg';
 
-import { Fraction } from '../../../node_modules/fractional/index.js';
-
 class RecipeView extends View {
   _parentElement = document.querySelector('.recipe');
   _errorMessage = "We couldn't find that recipe, Please try another one!!";
@@ -131,9 +129,7 @@ class RecipeView extends View {
       <svg class="recipe__icon">
         <use href="${icons}#icon-check"></use>
       </svg>
-      <div class="recipe__quantity">${
-        ing.quantity ? new Fraction(ing.quantity).toString() : ''
-      }</div>
+      <div class="recipe__quantity">${ing.quantity.toString()}</div>
       <div class="recipe__description">
         <span class="recipe__unit">${ing.unit}</span>
         ${ing.description}
